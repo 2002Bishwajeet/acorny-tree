@@ -19,6 +19,8 @@ class AcornyTrees extends StatelessWidget {
     return MaterialApp(
       home: const HomePage(),
       theme: Themes.generalTheme(context),
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
     );
   }
 }
