@@ -7,7 +7,6 @@ class Themes {
     return ThemeData(
       fontFamily: GoogleFonts.nunito().fontFamily,
       buttonColor: lightblue,
-      
     );
   }
 
@@ -15,4 +14,14 @@ class Themes {
   static Color brownish = HexColor('#54574B');
   static Color blackShade = HexColor('#09221D');
   static Color lightblue = HexColor('#0DD8E0');
+  static Color dullGreen = HexColor('#7B886F');
+  static Color waterBlue = HexColor('#00B2FF');
+  static Color landBrown = HexColor('#6C5952');
+
+  // The Color Decided by ping
+  static Color oldBurgandy = HexColor('#4B3B40');
+  static Color shadow = HexColor('#82735C');
+  static Color olivine = HexColor('#9DB17C');
+  static Color grannySmithApple = HexColor('#9CDE9F');
+  static Color teaGreen = HexColor('D1F5BE');
 }
