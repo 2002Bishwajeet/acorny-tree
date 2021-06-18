@@ -7,7 +7,6 @@ class Themes {
     return ThemeData(
       fontFamily: GoogleFonts.nunito().fontFamily,
       buttonColor: lightblue,
-      
     );
   }
 
@@ -15,4 +14,7 @@ class Themes {
   static Color brownish = HexColor('#54574B');
   static Color blackShade = HexColor('#09221D');
   static Color lightblue = HexColor('#0DD8E0');
+  static Color dullGreen = HexColor('#7B886F');
+  static Color waterBlue = HexColor('#00B2FF');
+  static Color landBrown = HexColor('#6C5952');
 }
