@@ -4,13 +4,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Themes {
   static ThemeData generalTheme(BuildContext context) {
-    return ThemeData(
-        fontFamily: GoogleFonts.nunito().fontFamily,
-        buttonColor: lightblue,
-        textTheme: TextTheme(
-          headline5: TextStyle(color: blackShade, fontWeight: FontWeight.w500),
+    return ThemeData.dark().copyWith(
+      textTheme: const TextTheme(
+        headline5: TextStyle(fontWeight: FontWeight.w500),
+      ),
+      appBarTheme: AppBarTheme(
+        titleTextStyle: TextStyle(
+          fontFamily: GoogleFonts.nunito().fontFamily,
         ),
-        appBarTheme: AppBarTheme(backgroundColor: olivine));
+      ),
+    );
   }
 
   static Color lightGreen = HexColor('#6D9F71');

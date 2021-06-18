@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
         child: SizedBox(
           width: 650,
           child: Image.asset(
-            'assets/cover1.png',
+            'assets/img/cover1.png',
             fit: BoxFit.contain,
           ),
         ),
