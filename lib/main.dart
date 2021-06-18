@@ -1,4 +1,5 @@
 import 'package:acorny_tree/screens/homepage.dart';
+import 'package:acorny_tree/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,13 +12,13 @@ void main() {
 }
 
 class AcornyTrees extends StatelessWidget {
-  const AcornyTrees({ Key? key }) : super(key: key);
+  const AcornyTrees({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home:  HomePage(),
-      
+    return MaterialApp(
+      home: const HomePage(),
+      theme: Themes.generalTheme(context),
     );
   }
 }
