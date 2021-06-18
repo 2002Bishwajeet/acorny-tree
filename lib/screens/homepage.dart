@@ -1,3 +1,4 @@
+import 'package:acorny_tree/widgets/buttonwidget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,6 +6,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      // ignore: avoid_unnecessary_containers
+      body: Container(
+        child: const Center(
+          child: Button(text: 'yolo'),
+        ),
+      ),
+    );
   }
 }
