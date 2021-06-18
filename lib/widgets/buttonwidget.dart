@@ -23,9 +23,10 @@ class Button extends StatelessWidget {
         child: icon == null
             ? Text(text)
             : Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(icon),
+                  const SizedBox(width: 10),
                   Text(text),
                 ],
               ));

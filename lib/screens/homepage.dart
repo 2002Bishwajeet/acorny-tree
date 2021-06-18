@@ -7,6 +7,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('New Garden'),
+      ),
       // ignore: avoid_unnecessary_containers
       body: Container(
         child: const Center(

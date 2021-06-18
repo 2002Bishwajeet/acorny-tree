@@ -1,4 +1,5 @@
 import 'package:acorny_tree/screens/homepage.dart';
+import 'package:acorny_tree/screens/splashscreen.dart';
 import 'package:acorny_tree/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/services.dart';
 const String _appTitle = 'RPGrass';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
   runApp(const AcornyTrees());
