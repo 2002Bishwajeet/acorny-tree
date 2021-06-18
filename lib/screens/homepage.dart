@@ -12,9 +12,22 @@ class HomePage extends StatelessWidget {
         title: const Text('New Garden'),
       ),
       // ignore: avoid_unnecessary_containers
-      body: Container(
-        child: const Center(
-          child: Button(text: 'yolo'),
+      body: Center(
+        child: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              Text(
+                'Budget',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+              TextFormField(
+                decoration: const InputDecoration(prefixText: '\$'),
+              )
+            ],
+          ),
         ),
       ),
     );
