@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 const String _appTitle = 'RPGrass';
 
 void main() {
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
+  runApp(AcornyTrees());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class AcornyTrees extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(_appTitle),
-        ),
-        body: const Center(
-          child: Text(_appTitle),
-        ),
-      ),
-    );
+    return MaterialApp();
   }
 }
