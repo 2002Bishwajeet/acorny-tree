@@ -1,3 +1,4 @@
+import 'package:acorny_tree/screens/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -6,13 +7,17 @@ const String _appTitle = 'RPGrass';
 void main() {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
-  runApp(AcornyTrees());
+  runApp(const AcornyTrees());
 }
 
 class AcornyTrees extends StatelessWidget {
-  // This widget is the root of your application.
+  const AcornyTrees({ Key? key }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return const MaterialApp(
+      home:  HomePage(),
+      
+    );
   }
 }
