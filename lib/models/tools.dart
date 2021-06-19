@@ -1,16 +1,28 @@
 import 'dart:convert';
 
 class Tools {
-  final String id;
-  final String name;
-  final String type;
-  final String img;
   Tools({
     required this.id,
     required this.name,
     required this.type,
     required this.img,
   });
+
+  factory Tools.fromMap(Map<String, dynamic> map) {
+    return Tools(
+      id: map['id'],
+      name: map['name'],
+      type: map['type'],
+      img: map['img'],
+    );
+  }
+
+  factory Tools.fromJson(String source) => Tools.fromMap(json.decode(source));
+
+  final String id;
+  final String name;
+  final String type;
+  final String img;
 
   Tools copyWith({
     String? id,
@@ -35,18 +47,7 @@ class Tools {
     };
   }
 
-  factory Tools.fromMap(Map<String, dynamic> map) {
-    return Tools(
-      id: map['id'],
-      name: map['name'],
-      type: map['type'],
-      img: map['img'],
-    );
-  }
-
   String toJson() => json.encode(toMap());
-
-  factory Tools.fromJson(String source) => Tools.fromMap(json.decode(source));
 
   @override
   String toString() {
