@@ -1,4 +1,5 @@
 import 'package:acorny_tree/screens/homepage.dart';
+import 'package:acorny_tree/screens/quest_screen.dart';
 import 'package:acorny_tree/screens/shop_screen.dart';
 import 'package:acorny_tree/themes.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +100,7 @@ class _AcornyTreesState extends State<AcornyTrees> {
                     onSubmitted: (val) {
                       if (val.isNotEmpty) {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (_) => const ShopScreen()));
+                            builder: (_) => const QuestScreen()));
                       }
                     },
                   ),

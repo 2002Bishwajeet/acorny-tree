@@ -1,6 +1,7 @@
 import 'package:acorny_tree/themes.dart';
 import 'package:acorny_tree/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({Key? key}) : super(key: key);
@@ -13,9 +14,9 @@ class ShopScreen extends StatelessWidget {
         backgroundColor: Themes.creamcolor,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).pop(),
             icon: Icon(
-              Icons.arrow_back,
+              LineIcons.angleLeft,
               color: Themes.blackShade,
             )),
       ),

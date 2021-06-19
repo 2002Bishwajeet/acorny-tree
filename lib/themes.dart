@@ -7,8 +7,10 @@ class Themes {
     return ThemeData.dark().copyWith(
       backgroundColor: creamcolor,
       textTheme: TextTheme(
-          headline5: const TextStyle(fontWeight: FontWeight.w500),
-          headline4: TextStyle(fontWeight: FontWeight.bold, color: blackShade)),
+        headline5: const TextStyle(fontWeight: FontWeight.w500),
+        headline4: TextStyle(fontWeight: FontWeight.bold, color: blackShade),
+        // subtitle1: TextStyle(color: blackShade)
+      ),
       appBarTheme: AppBarTheme(
         backgroundColor: landBrown,
         titleTextStyle: TextStyle(
