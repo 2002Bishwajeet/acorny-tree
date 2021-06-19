@@ -35,7 +35,7 @@ class ShopScreen extends StatelessWidget {
             child: GridView(
               padding: const EdgeInsets.all(24),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, childAspectRatio: 4 / 5),
+                  crossAxisCount: 2, childAspectRatio: 16 / 9),
               physics: const BouncingScrollPhysics(),
               // ignore: prefer_const_literals_to_create_immutables
               children: [
