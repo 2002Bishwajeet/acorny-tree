@@ -35,7 +35,7 @@ class ShopScreen extends StatelessWidget {
             child: GridView(
               padding: const EdgeInsets.all(24),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, childAspectRatio: 16 / 9),
+                  crossAxisCount: 2, childAspectRatio: 4 / 5),
               physics: const BouncingScrollPhysics(),
               children: const [
                 CustomCard(path: 'assets/anim/plant.zip', title: 'Plants'),
