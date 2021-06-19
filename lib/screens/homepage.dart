@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
               ),
               TextFormField(
                 decoration: const InputDecoration(prefixText: '\$'),
-              )
+              ),
             ],
           ),
         ),

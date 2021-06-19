@@ -5,10 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 class Themes {
   static ThemeData generalTheme(BuildContext context) {
     return ThemeData.dark().copyWith(
-      textTheme: const TextTheme(
-        headline5: TextStyle(fontWeight: FontWeight.w500),
-      ),
+      backgroundColor: creamcolor,
+      textTheme: TextTheme(
+          headline5: const TextStyle(fontWeight: FontWeight.w500),
+          headline4: TextStyle(fontWeight: FontWeight.bold, color: blackShade)),
       appBarTheme: AppBarTheme(
+        backgroundColor: landBrown,
         titleTextStyle: TextStyle(
           fontFamily: GoogleFonts.nunito().fontFamily,
         ),
@@ -23,6 +25,7 @@ class Themes {
   static Color dullGreen = HexColor('#7B886F');
   static Color waterBlue = HexColor('#00B2FF');
   static Color landBrown = HexColor('#6C5952');
+  static Color creamcolor = const Color(0xfff5f5f5);
 
   // The Color Decided by ping
   static Color oldBurgandy = HexColor('#4B3B40');
