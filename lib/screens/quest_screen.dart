@@ -22,9 +22,9 @@ class QuestScreen extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            color: Themes.blue,
+            color: Themes.brownish,
             alignment: Alignment.center,
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             child: Text(
               'Quests',
               style: Theme.of(context).textTheme.headline2,

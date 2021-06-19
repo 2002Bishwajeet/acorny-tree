@@ -4,12 +4,12 @@ import 'package:line_icons/line_icons.dart';
 import '../themes.dart';
 
 class QuestTile extends StatelessWidget {
-  final int index;
-  // ignore: sort_constructors_first
   const QuestTile({
     Key? key,
     required this.index,
   }) : super(key: key);
+
+  final int index;
 
   @override
   Widget build(BuildContext context) {

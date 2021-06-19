@@ -7,7 +7,7 @@ class Plant {
     required this.image,
     required this.interval,
   });
-  // ignore: sort_constructors_first
+
   factory Plant.fromMap(Map<String, dynamic> map) {
     return Plant(
       id: map['id'],
