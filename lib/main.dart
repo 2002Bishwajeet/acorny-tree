@@ -1,4 +1,5 @@
 import 'package:acorny_tree/screens/homepage.dart';
+import 'package:acorny_tree/screens/shop_screen.dart';
 import 'package:acorny_tree/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +12,10 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 void main() {
   timeDilation = 0.5;
   WidgetsFlutterBinding.ensureInitialized();
+  /*  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]); */
   runApp(const AcornyTrees());
 }
 
@@ -58,7 +63,7 @@ class _AcornyTreesState extends State<AcornyTrees> {
               ),
               onPressed: _textEditingController.text.isNotEmpty
                   ? () => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (_) => const HomePage()),
+                        MaterialPageRoute(builder: (_) => const ShopScreen()),
                       )
                   : null,
               child: const Text(
@@ -94,7 +99,7 @@ class _AcornyTreesState extends State<AcornyTrees> {
                     onSubmitted: (val) {
                       if (val.isNotEmpty) {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (_) => const HomePage()));
+                            builder: (_) => const ShopScreen()));
                       }
                     },
                   ),
