@@ -13,7 +13,7 @@ class ShopScreen extends StatelessWidget {
         backgroundColor: Themes.creamcolor,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).pop(),
             icon: Icon(
               Icons.arrow_back,
               color: Themes.blackShade,
