@@ -32,9 +32,11 @@ class CustomCard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: Text(title,
-                style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: Colors.white, fontWeight: FontWeight.normal)),
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.headline5!.copyWith(
+                  color: Themes.blackShade, fontWeight: FontWeight.normal),
+            ),
           ),
         ],
       ),
