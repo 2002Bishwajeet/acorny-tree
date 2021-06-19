@@ -44,56 +44,65 @@ class _AcornyTreesState extends State<AcornyTrees> {
     return MaterialApp(
       theme: Themes.generalTheme(context),
       debugShowCheckedModeBanner: false,
-      home: IntroductionScreen(
-        animationDuration: 500,
-        globalFooter: SizedBox(
-          width: double.infinity,
-          height: 60,
-          child: ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor:
-                  MaterialStateProperty.resolveWith((_) => Themes.lightGreen),
-            ),
-            onPressed: _textEditingController.text.isNotEmpty
-                ? () => Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => const HomePage()),
-                    )
-                : null,
-            child: const Text(
-              'Let\'s go right away!',
-              textScaleFactor: 1.1,
-              style: TextStyle(
-                  shadows: [Shadow(blurRadius: 2, offset: Offset(1.5, .5))]),
-            ),
-          ),
-        ),
-        dotsDecorator: const DotsDecorator(activeSize: Size(0, 0)),
-        showNextButton: false,
-        showDoneButton: false,
-        pages: [
-          PageViewModel(
-            decoration: AcornyTrees._pageDecor,
-            title: 'Budget',
-            image: Lottie.asset(
-              'assets/anim/money.zip',
-              repeat: true,
-              reverse: true,
-            ),
-            bodyWidget: Center(
-              child: SizedBox(
-                width: 60,
-                child: TextField(
-                  controller: _textEditingController,
-                  decoration: const InputDecoration(prefixText: '\$'),
-                  keyboardType: TextInputType.number,
-                  textInputAction: TextInputAction.done,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                  focusNode: FocusNode()..requestFocus(),
-                ),
+      debugShowMaterialGrid: false,
+      home: Builder(
+        builder: (context) => IntroductionScreen(
+          animationDuration: 500,
+          globalFooter: SizedBox(
+            width: double.infinity,
+            height: 60,
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.resolveWith((_) => Themes.lightGreen),
+              ),
+              onPressed: _textEditingController.text.isNotEmpty
+                  ? () => Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => const HomePage()),
+                      )
+                  : null,
+              child: const Text(
+                'Let\'s go right away!',
+                textScaleFactor: 1.1,
+                style: TextStyle(
+                    shadows: [Shadow(blurRadius: 2, offset: Offset(1.5, .5))]),
               ),
             ),
           ),
-        ],
+          dotsDecorator: const DotsDecorator(activeSize: Size(0, 0)),
+          showNextButton: false,
+          showDoneButton: false,
+          pages: [
+            PageViewModel(
+              decoration: AcornyTrees._pageDecor,
+              title: 'Budget',
+              image: Lottie.asset(
+                'assets/anim/money.zip',
+                repeat: true,
+                reverse: true,
+              ),
+              bodyWidget: Center(
+                child: SizedBox(
+                  width: 60,
+                  child: TextField(
+                    controller: _textEditingController,
+                    decoration: const InputDecoration(prefixText: '\$'),
+                    keyboardType: TextInputType.number,
+                    textInputAction: TextInputAction.done,
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    focusNode: FocusNode()..requestFocus(),
+                    onSubmitted: (val) {
+                      if (val.isNotEmpty) {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (_) => const HomePage()));
+                      }
+                    },
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
