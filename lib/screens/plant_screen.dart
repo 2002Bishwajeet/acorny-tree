@@ -1,5 +1,6 @@
 import 'package:acorny_tree/models/plant.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 
 import '../themes.dart';
@@ -57,7 +58,7 @@ class PlantScreen extends StatelessWidget {
                 width: 200,
               ),
               Text(
-                plant.interval.toString(),
+                DateFormat.Hm().format(plant.interval),
                 style: Theme.of(context).textTheme.headline5,
               ),
             ],
