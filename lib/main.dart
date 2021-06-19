@@ -1,4 +1,3 @@
-import 'package:acorny_tree/screens/homepage.dart';
 import 'package:acorny_tree/screens/quest_screen.dart';
 import 'package:acorny_tree/screens/shop_screen.dart';
 import 'package:acorny_tree/themes.dart';
@@ -6,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:lottie/lottie.dart';
-// import 'package:flutter/services.dart';
 
 import 'package:flutter/scheduler.dart' show timeDilation;
 
@@ -14,8 +12,8 @@ void main() {
   timeDilation = 0.5;
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.landscapeLeft,
-    DeviceOrientation.landscapeRight,
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
   ]);
   runApp(const AcornyTrees());
 }
