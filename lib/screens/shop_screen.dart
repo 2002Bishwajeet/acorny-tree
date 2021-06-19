@@ -45,7 +45,7 @@ class ShopScreen extends StatelessWidget {
                   url: 'assets/anim/soil.zip',
                 ),
                 const CustomCard(url: 'assets/anim/tools.zip', title: 'Tools'),
-                const CustomCard(url: 'assets/anim/farm.json', title: 'Farm'),
+                const CustomCard(url: 'assets/anim/land.json', title: 'Farm'),
               ],
             ),
           ),
