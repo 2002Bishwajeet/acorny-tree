@@ -30,7 +30,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       backgroundColor: Themes.oldBurgandy,
       body: Column(
         children: [
-          TreeAppbar(
+          const TreeAppbar(
             color: Themes.brown,
             sliver: false,
           ),

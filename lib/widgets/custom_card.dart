@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class CustomCard extends StatelessWidget {
-  final String url;
+  final String path;
   final String title;
 
   // ignore: sort_constructors_first
-  const CustomCard({Key? key, required this.url, required this.title})
+  const CustomCard({Key? key, required this.path, required this.title})
       : super(key: key);
 
   @override
@@ -25,7 +25,7 @@ class CustomCard extends StatelessWidget {
         children: [
           Expanded(
             child: Lottie.asset(
-              url,
+              path,
               fit: BoxFit.fill,
               repeat: true,
             ),

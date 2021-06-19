@@ -12,7 +12,7 @@ class ShopScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Themes.creamcolor,
         elevation: 0,
-        leading: IconButton(
+        leading: const IconButton(
             onPressed: null,
             // onPressed: () => Navigator.of(context).pop(),
             icon: Icon(
@@ -38,14 +38,10 @@ class ShopScreen extends StatelessWidget {
                   crossAxisCount: 2, childAspectRatio: 16 / 9),
               physics: const BouncingScrollPhysics(),
               children: const [
-                CustomCard(
-                    url: 'assets/anim/plant-lottie.zip', title: 'Plants'),
-                CustomCard(
-                  title: 'Soil',
-                  url: 'assets/anim/soil.zip',
-                ),
-                CustomCard(url: 'assets/anim/tools.zip', title: 'Tools'),
-                CustomCard(url: 'assets/anim/land.json', title: 'Farm'),
+                CustomCard(path: 'assets/anim/plant.zip', title: 'Plants'),
+                CustomCard(title: 'Soil', path: 'assets/anim/soil.zip'),
+                CustomCard(path: 'assets/anim/tools.zip', title: 'Tools'),
+                CustomCard(path: 'assets/anim/land.json', title: 'Farm'),
               ],
             ),
           ),

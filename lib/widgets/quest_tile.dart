@@ -34,7 +34,7 @@ class QuestTile extends StatelessWidget {
         ),
         trailing: IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               LineIcons.checkCircle,
               color: Themes.blackShade,
             )),
