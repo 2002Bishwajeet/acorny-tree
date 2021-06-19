@@ -62,14 +62,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   const SizedBox(width: 10),
                   SizedBox(
-                    width: 50,
+                    width: 100,
                     child: TextField(
                       controller: _moneyController,
                       decoration: const InputDecoration(prefixText: '\$'),
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.done,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      focusNode: FocusNode()..requestFocus(),
+                      autofocus: true,
                       onSubmitted: (val) {
                         if (val.isNotEmpty) {
                           Navigator.of(context).pushReplacement(
