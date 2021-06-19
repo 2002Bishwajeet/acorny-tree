@@ -3,6 +3,7 @@ import 'package:acorny_tree/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:line_icons/line_icon.dart';
 import 'package:lottie/lottie.dart';
 
 import '../themes.dart';
@@ -25,57 +26,80 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return IntroductionScreen(
-      animationDuration: 500,
-      dotsDecorator: const DotsDecorator(activeSize: Size(0, 0)),
-      showNextButton: false,
-      showDoneButton: true,
-      globalBackgroundColor: Themes.oldBurgandy,
-      globalHeader: TreeAppbar(
-        color: Themes.green,
-        sliver: false,
-      ),
-      done: const Text(
-        'Start Farming',
-        style: TextStyle(fontWeight: FontWeight.w600),
-      ),
-      onDone: () async {
-        await Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const ShopScreen()),
-        );
-      },
-      pages: [
-        PageViewModel(
-          decoration: _pageDecor,
-          title: 'Budget',
-          image: Lottie.asset(
-            'assets/anim/money.zip',
-            repeat: true,
-            reverse: true,
-            fit: BoxFit.cover,
+    return Scaffold(
+      backgroundColor: Themes.oldBurgandy,
+      body: Column(
+        children: [
+          TreeAppbar(
+            color: Themes.brown,
+            sliver: false,
           ),
-          bodyWidget: Center(
-            child: SizedBox(
-              width: 60,
-              child: TextField(
-                controller: _moneyController,
-                decoration: const InputDecoration(prefixText: '\$'),
-                keyboardType: TextInputType.number,
-                textInputAction: TextInputAction.done,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                focusNode: FocusNode()..requestFocus(),
-                onSubmitted: (val) {
-                  if (val.isNotEmpty) {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (_) => const QuestScreen()),
-                    );
-                  }
-                },
+          Expanded(
+              child: Align(
+            child: Container(
+              width: 200,
+              padding: const EdgeInsets.only(top: 20, left: 15),
+              child: Lottie.asset(
+                'assets/anim/money.zip',
+                repeat: true,
+                reverse: true,
+                fit: BoxFit.cover,
               ),
             ),
-          ),
-        ),
-      ],
+          )),
+          Expanded(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    'Budget ',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  SizedBox(
+                    width: 50,
+                    child: TextField(
+                      controller: _moneyController,
+                      decoration: const InputDecoration(prefixText: '\$'),
+                      keyboardType: TextInputType.number,
+                      textInputAction: TextInputAction.done,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      focusNode: FocusNode()..requestFocus(),
+                      onSubmitted: (val) {
+                        if (val.isNotEmpty) {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                                builder: (_) => const QuestScreen()),
+                          );
+                        }
+                      },
+                      style: const TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton.icon(
+                icon: LineIcon.check(),
+                label: const Text('Continue'),
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (_) => const QuestScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(primary: Themes.brownAccent),
+              ),
+            ],
+          )),
+        ],
+      ),
     );
   }
 }
