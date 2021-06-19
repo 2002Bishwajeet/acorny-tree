@@ -13,10 +13,10 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 void main() {
   timeDilation = 0.5;
   WidgetsFlutterBinding.ensureInitialized();
-  /*  SystemChrome.setPreferredOrientations([
+  SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
-  ]); */
+  ]);
   runApp(const AcornyTrees());
 }
 
@@ -86,6 +86,7 @@ class _AcornyTreesState extends State<AcornyTrees> {
                 'assets/anim/money.zip',
                 repeat: true,
                 reverse: true,
+                fit: BoxFit.cover,
               ),
               bodyWidget: Center(
                 child: SizedBox(
