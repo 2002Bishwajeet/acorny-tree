@@ -19,21 +19,21 @@ class Themes {
     );
   }
 
-  static Color lightGreen = const Color(0x6d9f71);
-  static Color brownish = const Color(0x54574b);
-  static Color blackShade = const Color(0x09221d);
-  static Color lightblue = const Color(0x0dd8e0);
-  static Color dullGreen = const Color(0x7b886f);
-  static Color waterBlue = const Color(0x00b2ff);
-  static Color landBrown = const Color(0x6c5952);
-  static Color creamcolor = const Color(0xf5f5f5);
+  static Color lightGreen = const Color(0xff6d9f71);
+  static Color brownish = const Color(0xff54574b);
+  static Color blackShade = const Color(0xff09221d);
+  static Color lightblue = const Color(0xff0dd8e0);
+  static Color dullGreen = const Color(0xff7b886f);
+  static Color waterBlue = const Color(0xff00b2ff);
+  static Color landBrown = const Color(0xff6c5952);
+  static Color creamcolor = const Color(0xfff5f5f5);
 
   // The Color Decided by ping
-  static Color oldBurgandy = const Color(0x4b3b40);
-  static Color shadow = const Color(0x82735c);
-  static Color olivine = const Color(0x9db17c);
-  static Color grannySmithApple = const Color(0x9cde9f);
-  static Color teaGreen = const Color(0xd1f5be);
+  static Color oldBurgandy = const Color(0xff4b3b40);
+  static Color shadow = const Color(0xff82735c);
+  static Color olivine = const Color(0xff9db17c);
+  static Color grannySmithApple = const Color(0xff9cde9f);
+  static Color teaGreen = const Color(0xffd1f5be);
 
   static Color green = const Color(0xff747A47);
   static Color greenAccent = const Color(0xff6A6F47);
