@@ -58,6 +58,7 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
     final appBar = Stack(
       children: [
         Positioned.fill(
@@ -66,7 +67,7 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
               filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.8),
+                  color: color.withOpacity(0.9),
                 ),
               ),
             ),
@@ -74,7 +75,7 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
         Padding(
           padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top + 8.0,
+            top: mq.padding.top + 8.0,
             left: 8.0,
             right: 8.0,
             bottom: 8.0,
@@ -114,7 +115,12 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
       );
     } else {
-      return appBar;
+      return SizedBox(
+        height: kToolbarHeight +
+            (bottom?.preferredSize.height ?? 0) +
+            mq.padding.top,
+        child: appBar,
+      );
     }
   }
 
@@ -125,15 +131,15 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class _LittyAppBarDelegate extends SliverPersistentHeaderDelegate {
-  final double topPadding;
-  final Widget body;
-  final PreferredSizeWidget? bottom;
-
   _LittyAppBarDelegate({
     required this.topPadding,
     required this.body,
     this.bottom,
   });
+
+  final double topPadding;
+  final Widget body;
+  final PreferredSizeWidget? bottom;
 
   @override
   Widget build(

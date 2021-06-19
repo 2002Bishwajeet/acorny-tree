@@ -30,8 +30,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       dotsDecorator: const DotsDecorator(activeSize: Size(0, 0)),
       showNextButton: false,
       showDoneButton: true,
+      globalBackgroundColor: Themes.oldBurgandy,
       globalHeader: TreeAppbar(
         color: Themes.green,
+        sliver: false,
       ),
       done: const Text(
         'Start Farming',
