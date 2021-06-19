@@ -1,15 +1,25 @@
 import 'dart:convert';
 
 class Soil {
-  final String id;
-  final String soilName;
-  final String soilImage;
-
   Soil({
     required this.id,
     required this.soilName,
     required this.soilImage,
   });
+
+  factory Soil.fromMap(Map<String, dynamic> map) {
+    return Soil(
+      id: map['id'],
+      soilName: map['soilName'],
+      soilImage: map['soilImage'],
+    );
+  }
+
+  factory Soil.fromJson(String source) => Soil.fromMap(json.decode(source));
+
+  final String id;
+  final String soilName;
+  final String soilImage;
 
   Soil copyWith({
     String? id,
@@ -31,17 +41,7 @@ class Soil {
     };
   }
 
-  factory Soil.fromMap(Map<String, dynamic> map) {
-    return Soil(
-      id: map['id'],
-      soilName: map['soilName'],
-      soilImage: map['soilImage'],
-    );
-  }
-
   String toJson() => json.encode(toMap());
-
-  factory Soil.fromJson(String source) => Soil.fromMap(json.decode(source));
 
   @override
   String toString() =>

@@ -1,11 +1,6 @@
 import 'dart:convert';
 
 class Plant {
-  final String id;
-  final String name;
-  final String image;
-  final DateTime interval;
-
   Plant({
     required this.id,
     required this.name,
@@ -13,6 +8,21 @@ class Plant {
     required this.interval,
   });
   // ignore: sort_constructors_first
+  factory Plant.fromMap(Map<String, dynamic> map) {
+    return Plant(
+      id: map['id'],
+      name: map['name'],
+      image: map['image'],
+      interval: DateTime.fromMillisecondsSinceEpoch(map['interval']),
+    );
+  }
+
+  factory Plant.fromJson(String source) => Plant.fromMap(json.decode(source));
+
+  final String id;
+  final String name;
+  final String image;
+  final DateTime interval;
 
   Plant copyWith({
     String? id,
@@ -38,18 +48,7 @@ class Plant {
     };
   }
 
-  factory Plant.fromMap(Map<String, dynamic> map) {
-    return Plant(
-      id: map['id'],
-      name: map['name'],
-      image: map['image'],
-      interval: DateTime.fromMillisecondsSinceEpoch(map['interval']),
-    );
-  }
-
   String toJson() => json.encode(toMap());
-
-  factory Plant.fromJson(String source) => Plant.fromMap(json.decode(source));
 
   @override
   String toString() {

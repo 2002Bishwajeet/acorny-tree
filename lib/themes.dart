@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class Themes {
   static ThemeData generalTheme(BuildContext context) {
     final dark = ThemeData.dark();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return dark.copyWith(
       backgroundColor: creamcolor,
       textTheme: const TextTheme(
@@ -12,7 +13,8 @@ class Themes {
         // subtitle1: TextStyle(color: blackShade)
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: landBrown,
+        backgroundColor: brownLight,
+        iconTheme: IconThemeData(color: isDark ? lightblue : blackShade),
         titleTextStyle: TextStyle(
           fontFamily: GoogleFonts.nunito().fontFamily,
         ),

@@ -9,25 +9,25 @@ class QuestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        backgroundColor: Themes.creamcolor,
         elevation: 0,
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(LineIcons.angleLeft),
-          color: Themes.blackShade,
         ),
       ),
       extendBody: false,
       extendBodyBehindAppBar: false,
       body: Column(
         children: [
-          Padding(
+          Container(
+            width: double.infinity,
+            color: Themes.blue,
+            alignment: Alignment.center,
             padding: const EdgeInsets.all(16),
             child: Text(
               'Quests',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline2,
             ),
           ),
           Expanded(
@@ -45,4 +45,3 @@ class QuestScreen extends StatelessWidget {
     );
   }
 }
-
