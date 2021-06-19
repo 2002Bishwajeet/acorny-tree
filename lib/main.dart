@@ -1,4 +1,4 @@
-import 'package:acorny_tree/screens/homepage.dart';
+import 'package:acorny_tree/pages/homepage.dart';
 import 'package:acorny_tree/screens/quest_screen.dart';
 import 'package:acorny_tree/screens/shop_screen.dart';
 import 'package:acorny_tree/themes.dart';
@@ -64,7 +64,7 @@ class _AcornyTreesState extends State<AcornyTrees> {
               ),
               onPressed: _textEditingController.text.isNotEmpty
                   ? () => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (_) => const ShopScreen()),
+                        MaterialPageRoute(builder: (_) => const HomePage()),
                       )
                   : null,
               child: const Text(
