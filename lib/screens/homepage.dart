@@ -11,17 +11,14 @@ class HomePage extends StatelessWidget {
         title: const Text('New Garden'),
       ),
       body: Center(
-        child: Form(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Budget',
-                style: Theme.of(context).textTheme.headline5,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(prefixText: '\$'),
-              ),
+            children: const [
+              Placeholder(),
+              Placeholder(),
+              Placeholder(),
+              Placeholder(),
             ],
           ),
         ),
