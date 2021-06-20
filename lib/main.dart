@@ -1,25 +1,20 @@
-import 'package:acorny_tree/screens/homepage.dart';
-import 'package:acorny_tree/screens/onboarding.dart';
-import 'package:acorny_tree/screens/plant_screen.dart';
-import 'package:acorny_tree/screens/quest_screen.dart';
-import 'package:acorny_tree/screens/shop_screen.dart';
-import 'package:acorny_tree/themes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
-
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'models/plant.dart';
+import 'screens/homepage.dart';
+import 'screens/onboarding.dart';
+import 'screens/plant_screen.dart';
+import 'screens/quest_screen.dart';
+import 'screens/shop_screen.dart';
+import 'themes.dart';
 
 void main() {
   timeDilation = .5;
   WidgetsFlutterBinding.ensureInitialized();
-  // SystemChrome.setPreferredOrientations([
-  //   DeviceOrientation.portraitUp,
-  //   DeviceOrientation.portraitDown,
-  // ]);
   runApp(const AcornyTrees());
 }
 
@@ -27,7 +22,9 @@ class AcornyTrees extends StatelessWidget {
   const AcornyTrees({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => MaterialApp(
+  Widget build(BuildContext context) {
+    return ProviderScope(
+      child: MaterialApp(
         theme: Themes.generalTheme(context),
         debugShowCheckedModeBanner: false,
         routes: {
@@ -46,7 +43,9 @@ class AcornyTrees extends StatelessWidget {
               ),
         },
         home: kDebugMode ? const AppWrapper() : const OnboardingScreen(),
-      );
+      ),
+    );
+  }
 }
 
 class AppWrapper extends StatelessWidget {

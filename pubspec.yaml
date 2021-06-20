@@ -31,6 +31,7 @@ dependencies:
   lottie: ^1.0.1
   very_good_analysis: ^2.1.2
   intl: ^0.17.0
+  flutter_riverpod: 0.14.0+3
 
 dev_dependencies:
   flutter_test:
