@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StatusBarStyler extends StatelessWidget {
   const StatusBarStyler({
@@ -86,10 +87,9 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
             middle: title == null
                 ? null
                 : DefaultTextStyle(
-                    style: const TextStyle(
+                    style: GoogleFonts.pressStart2p(
                       color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25.0,
                     ),
                     child: title!,
                   ),

@@ -35,7 +35,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Lottie.asset(
                 'assets/anim/money.zip',
                 repeat: true,
-                reverse: true,
                 fit: BoxFit.cover,
               ),
             ),

@@ -6,7 +6,8 @@ class Themes {
     final dark = ThemeData.dark();
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return dark.copyWith(
-      backgroundColor: creamcolor,
+      scaffoldBackgroundColor: oldBurgandy,
+      backgroundColor: oldBurgandy,
       textTheme: const TextTheme(
         headline5: TextStyle(fontWeight: FontWeight.w500),
         headline4: TextStyle(fontWeight: FontWeight.bold, color: blackShade),
