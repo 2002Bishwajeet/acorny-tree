@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'models/plant.dart';
-import 'screens/homepage.dart';
+import 'screens/home_screen.dart';
 import 'screens/onboarding.dart';
 import 'screens/plant_screen.dart';
 import 'screens/quest_screen.dart';
@@ -28,7 +28,7 @@ class AcornyTrees extends StatelessWidget {
         theme: Themes.generalTheme(context),
         debugShowCheckedModeBanner: false,
         routes: {
-          '/home': (context) => const HomePage(),
+          '/home': (context) => const HomeScreen(),
           '/onboard': (context) => const OnboardingScreen(),
           '/shop': (context) => const ShopScreen(),
           '/quest': (context) => const QuestScreen(),

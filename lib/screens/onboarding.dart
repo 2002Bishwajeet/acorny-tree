@@ -6,6 +6,7 @@ import 'package:line_icons/line_icon.dart';
 import 'package:lottie/lottie.dart';
 
 import '../themes.dart';
+import 'home_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -62,14 +63,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       textInputAction: TextInputAction.done,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                       autofocus: true,
-                      onSubmitted: (val) {
-                        if (val.isNotEmpty) {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                                builder: (_) => const QuestScreen()),
-                          );
-                        }
-                      },
                       style: const TextStyle(
                         fontSize: 20,
                       ),
@@ -82,9 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 icon: LineIcon.check(),
                 label: const Text('Continue'),
                 onPressed: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (_) => const QuestScreen()),
-                  );
+                  Navigator.of(context).pushNamed('home');
                 },
                 style: ElevatedButton.styleFrom(primary: Themes.brownAccent),
               ),
