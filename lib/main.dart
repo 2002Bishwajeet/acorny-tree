@@ -18,6 +18,15 @@ void main() {
   runApp(const AcornyTrees());
 }
 
+class BouncyScrollBehavior extends ScrollBehavior {
+  const BouncyScrollBehavior();
+  @override
+  ScrollPhysics getScrollPhysics(BuildContext context) {
+    return const AlwaysScrollableScrollPhysics()
+        .applyTo(const BouncingScrollPhysics());
+  }
+}
+
 class AcornyTrees extends StatelessWidget {
   const AcornyTrees({Key? key}) : super(key: key);
 
@@ -25,6 +34,12 @@ class AcornyTrees extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
+        builder: (context, child) {
+          return ScrollConfiguration(
+            behavior: const BouncyScrollBehavior(),
+            child: child ?? const SizedBox(),
+          );
+        },
         theme: Themes.generalTheme(context),
         debugShowCheckedModeBanner: false,
         routes: {

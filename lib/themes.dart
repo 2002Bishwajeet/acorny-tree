@@ -52,6 +52,10 @@ class Themes {
   static const Color brownLight = Color(0xffa18e6f);
   static const Color brown = Color(0xff82735C);
   static const Color brownAccent = Color(0xff6B5F4C);
+  static const Color brownDark = Color(0xff42392c);
   static const Color blue = Color(0xff47627A);
   static const Color blueAccent = Color(0xff5A80A1);
+
+  static const Color potOrange = Color(0xffd36022);
+  static const Color plantGreen = Color(0xff8BCF1C);
 }
