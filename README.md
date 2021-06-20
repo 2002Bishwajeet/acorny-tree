@@ -1,16 +1,12 @@
-# acorny_tree
+# RPGrass
 
-A new Flutter project.
+### RPGrass gamifies the adventure of building a personal garden, capturing the interest of our current generation which is glued to their phones.
 
-## Getting Started
+Read more at our devpost 👉 https://devpost.com/software/rpgrass
 
-This project is a starting point for a Flutter application.
+# Setup
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Install the [Flutter SDK](https://flutter.dev/docs/get-started/install)
+1. Set up the Android SDK if building for android, or XCode for iOS
+1. Clone the repository
+1. To start the app: `flutter run`, or press the green play button in your IDE
