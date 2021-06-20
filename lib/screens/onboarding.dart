@@ -27,6 +27,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           const TreeAppbar(
             color: Themes.brown,
             sliver: false,
+            title: Text('Start your garden'),
           ),
           Expanded(
               child: Align(
@@ -75,7 +76,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 icon: LineIcon.check(),
                 label: const Text('Continue'),
                 onPressed: () {
-                  Navigator.of(context).pushNamed('home');
+                  Navigator.of(context).pushNamed('/home');
                 },
                 style: ElevatedButton.styleFrom(primary: Themes.brownAccent),
               ),

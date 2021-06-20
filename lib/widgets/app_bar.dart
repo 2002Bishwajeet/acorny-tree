@@ -89,7 +89,7 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
                 : DefaultTextStyle(
                     style: GoogleFonts.pressStart2p(
                       color: Colors.white,
-                      fontSize: 25.0,
+                      fontSize: 20.0,
                     ),
                     child: title!,
                   ),
