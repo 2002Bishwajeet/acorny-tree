@@ -61,7 +61,7 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
-    final appBar = Stack(
+    Widget appBar = Stack(
       children: [
         Positioned.fill(
           child: ClipRect(
@@ -107,13 +107,15 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
       ],
     );
 
+    appBar = StatusBarStyler(brightness: Brightness.dark, child: appBar);
+
     if (sliver) {
       return SliverPersistentHeader(
         floating: false,
         pinned: true,
         delegate: _LittyAppBarDelegate(
           topPadding: MediaQuery.of(context).padding.top,
-          body: StatusBarStyler(child: appBar),
+          body: appBar,
           bottom: bottom,
         ),
       );
