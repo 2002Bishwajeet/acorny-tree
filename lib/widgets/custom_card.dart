@@ -16,7 +16,7 @@ class CustomCard extends StatelessWidget {
       margin: const EdgeInsets.only(top: 15, right: 15),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Themes.grannySmithApple,
+        color: Themes.creamcolor,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Column(

@@ -24,37 +24,52 @@ class HomeScreen extends ConsumerWidget {
                   fontSize: 16.0,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  children: const [
-                    Icon(LineIcons.exclamationCircle),
-                    SizedBox(width: 5),
-                    Text('Next Task: Buy seeds'),
-                  ],
+              const SizedBox(height: 16),
+              InkWell(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: const [
+                      Icon(LineIcons.exclamationCircle),
+                      SizedBox(width: 5),
+                      Text('Next Task: Buy soil'),
+                    ],
+                  ),
                 ),
+                onTap: () {
+                  Navigator.pushNamed(context, '/quest');
+                },
               ),
               Expanded(
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: planters.length,
-                  itemBuilder: (context, index) {
-                    final planter = planters[index];
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                child: Center(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: SizedBox(
-                            width: 150,
-                            height: 150,
-                            child: Image.asset(planter.prototype.image),
+                        for (var i = 0; i < planters.length; i++)
+                          Builder(
+                            builder: (context) {
+                              final planter = planters[i];
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: SizedBox(
+                                      width: 150,
+                                      height: 150,
+                                      child:
+                                          Image.asset(planter.prototype.image),
+                                    ),
+                                  ),
+                                  Text(planter.alias),
+                                ],
+                              );
+                            },
                           ),
-                        ),
-                        Text(planter.alias),
                       ],
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ),
               Row(
@@ -64,7 +79,9 @@ class HomeScreen extends ConsumerWidget {
                   Expanded(
                     child: ElevatedButton.icon(
                       label: const Text('Shop'),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/shop');
+                      },
                       icon: const Icon(LineIcons.dollarSign),
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.zero,
@@ -122,7 +139,7 @@ class HomeScreen extends ConsumerWidget {
                     SizedBox(
                       width: 200,
                       child: XPBar(
-                        xp: 643,
+                        xp: 120,
                         max: 1000,
                       ),
                     ),

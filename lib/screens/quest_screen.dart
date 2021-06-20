@@ -15,14 +15,10 @@ class QuestScreen extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     final quests = watch(questsProvider);
     return Scaffold(
-      appBar: TreeAppbar(
+      appBar: const TreeAppbar(
         color: Themes.brown,
         sliver: false,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(LineIcons.angleLeft),
-        ),
-        title: const Text('Quests'),
+        title: Text('Quests'),
       ),
       extendBody: false,
       extendBodyBehindAppBar: false,

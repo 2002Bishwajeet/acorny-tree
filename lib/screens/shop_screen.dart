@@ -1,6 +1,8 @@
-import 'package:acorny_tree/themes.dart';
-import 'package:acorny_tree/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
+
+import '../themes.dart';
+import '../widgets/app_bar.dart';
+import '../widgets/custom_card.dart';
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({Key? key}) : super(key: key);
@@ -8,29 +10,15 @@ class ShopScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Themes.creamcolor,
-      appBar: AppBar(
-        backgroundColor: Themes.creamcolor,
-        elevation: 0,
-        leading: const IconButton(
-            onPressed: null,
-            // onPressed: () => Navigator.of(context).pop(),
-            icon: Icon(
-              Icons.arrow_back,
-              color: Themes.blackShade,
-            )),
+      appBar: const TreeAppbar(
+        color: Themes.potOrange,
+        sliver: false,
+        title: Text('Shop'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Shop',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ),
           Expanded(
             child: GridView(
               padding: const EdgeInsets.all(24),

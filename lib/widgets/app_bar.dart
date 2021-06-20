@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:line_icons/line_icons.dart';
 
 class StatusBarStyler extends StatelessWidget {
   const StatusBarStyler({
@@ -83,7 +84,9 @@ class TreeAppbar extends StatelessWidget implements PreferredSizeWidget {
           ),
           child: NavigationToolbar(
             leading: leading ??
-                (Navigator.of(context).canPop() ? const BackButton() : null),
+                (Navigator.of(context).canPop()
+                    ? const TreeBackButton()
+                    : null),
             middle: title == null
                 ? null
                 : DefaultTextStyle(
@@ -167,4 +170,18 @@ class _LittyAppBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   bool shouldRebuild(_LittyAppBarDelegate old) =>
       old.topPadding != topPadding || old.body != body;
+}
+
+class TreeBackButton extends StatelessWidget {
+  const TreeBackButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+      icon: const Icon(LineIcons.angleLeft),
+    );
+  }
 }
